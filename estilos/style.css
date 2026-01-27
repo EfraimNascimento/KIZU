@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    
 }
 
 :root{
@@ -90,6 +90,8 @@ section{
     border: 1px solid var(---borda);
 }
 
+/*Inicio da seção principal*/
+
 section#principal{
     display: flex;
     flex-direction: column;
@@ -98,13 +100,6 @@ section#principal{
     color: var(---texto-invertido);
     font-weight: 400;
     background-color: black;
-    
-}
-
-section#principal{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position: cover;
     
 }
 
@@ -118,13 +113,13 @@ section#principal > div.itens{
 }
 
 section#principal > div.itens > img{
-    margin-top: 60px;
-    max-width: 900px;
+    margin-top: 40px;
+    max-width: 550px;
 }
 
 section#principal > div.itens > h1{
     font-family: "Cormorant Upright", serif;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 section#principal > div.itens > input{
@@ -142,46 +137,54 @@ section#principal > div.itens > input:hover{
     color: var(---text);
 }
 
+/*Fim da seção principal*/
+/*Inicio da seção coleção*/
+
 section#colecao{
     background-color: var(---fundo);
     color: var(---texto-invertido);
     
 }
 
-section#colecao img{
-    width: 150px;
-}
-
 section#colecao > h2{
-    font-size: 2em;
+    margin: 50px 0;
+    font-size: 1.8em;
     text-align: center;
-}
-
-section#colecao > div.colecao-container{
-    width: 100%;
-    text-align: center;
-}
-
-section#colecao > div.colecao-container > img{
-    width: 200px;
-    height: 200px;
 }
 
 section#colecao > div.colecao-container{
     display: flex;
     flex-flow: column wrap;
-    width: 100vw;
+    text-align: center;
+}
+
+section#colecao > div.colecao-container > img{
+    width: 100%;
+    height: 200px;
+}
+
+section#colecao > div.colecao-container > p{
+    margin: 10px;
     text-align: justify;
+    line-height: 1.8em;
+    text-indent: 1em;
 }
 
 section#colecao > div.image-container{
-    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5px;
 }
 
 section#colecao > div.image-container > img{
     width: 200px;
     height: 200px;
 }
+
+
+/*Fim da seção coleção*/
+/*Inicio da seção manifesto*/
 
 section#manifesto{
     display: flex;
@@ -207,6 +210,9 @@ section#manifesto > p{
     text-align: center;
 }
 
+/*Fim da seção manifesto*/
+/*Inicio da seção shop*/
+
 section#shop{
     padding: 30px;
 }
@@ -229,17 +235,48 @@ section#shop > div#produtos > div.itens{
 
 section#shop > div#produtos > div.itens > img{
     height: 300px;
-    width: 70%;
+    width: 100%;
 }
 
 section#shop > div#produtos > div.itens > p{
     font-weight: bold;
 }
 
+/*Fim da seção shop*/
 
 footer{
-    height: 150px;
+    display: grid;
+    grid-template-columns: 50% 4px 50%;
+    grid-template-rows: 150px;
+    place-items: center center;
     width: 100%;
     background-color: var(---fundo);
     color: var(---texto-invertido);
+}
+
+footer > img{
+    grid-column: 1;
+    height: 130px;
+}
+
+footer > span{
+    grid-column: 2;
+    height: 100px;
+    width: 1px;
+    background-color: white;
+}
+
+footer > div#itens-contato{
+    grid-column: 3;
+}
+
+footer > div#itens-contato > ul{
+    list-style: none;
+}
+
+footer > div#itens-contato > ul > li > a{
+    text-decoration: none;
+    color: var(---texto-invertido);
+    margin: 5px;
+    line-height: 1.5em;
 }
