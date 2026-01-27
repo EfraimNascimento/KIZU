@@ -17,7 +17,7 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Syne', sans-serif;
 }
 
 header{
@@ -148,6 +148,9 @@ section#colecao{
 
 section#colecao > h2{
     margin: 50px 0;
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-style: normal;
     font-size: 1.8em;
     text-align: center;
 }
@@ -165,9 +168,12 @@ section#colecao > div.colecao-container > img{
 
 section#colecao > div.colecao-container > p{
     margin: 10px;
-    text-align: justify;
-    line-height: 1.8em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    opacity: 0.85;
     text-indent: 1em;
+    line-height: 1.8em;
 }
 
 section#colecao > div.image-container{
@@ -208,7 +214,10 @@ section#manifesto > img{
 
 section#manifesto > p{
     margin: 10px;
-    font-size: 1.1em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    opacity: 0.85;
     text-indent: 1em;
     text-align: center;
 }
@@ -255,6 +264,7 @@ footer{
     width: 100%;
     background-color: var(---fundo);
     color: var(---texto-invertido);
+    box-shadow: 0px -7px 5px rgba(0, 0, 0, 0.300);
 }
 
 footer > img{
@@ -264,7 +274,7 @@ footer > img{
 
 footer > span{
     grid-column: 2;
-    height: 100px;
+    height: 110px;
     width: 1px;
     background-color: white;
 }
@@ -281,5 +291,5 @@ footer > div#itens-contato > ul > li > a{
     text-decoration: none;
     color: var(---texto-invertido);
     margin: 5px;
-    line-height: 1.5em;
+    line-height: 2.2em;
 }
