@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: 1px solid red;
 }
 
 :root{
@@ -16,7 +17,6 @@
 }
 
 body{
-    overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -30,7 +30,7 @@ header > div.menu-icons{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.342);
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,8 +48,8 @@ header > div.menu-icons > span > i{
 header > nav{
     display: none;
     position: absolute;
-    height: 100px;
-    width: 100%;
+    height: 80px;
+    width: 100vw;
     text-align: center;
     align-content: center;
     background-color: rgba(0, 0, 0, 0.342);
@@ -86,7 +86,6 @@ header > nav > ul > li > a:hover{
 }
 
 section{
-    width: 100vw;
     overflow: hidden;
     border: 1px solid var(---borda);
 }
@@ -115,7 +114,6 @@ section#principal > div.itens{
     align-items: center;
     justify-content: center;
     gap: 100px;
-    width: 100vw;
     height: 100vh;
 }
 
@@ -147,7 +145,7 @@ section#principal > div.itens > input:hover{
 section#colecao{
     background-color: var(---fundo);
     color: var(---texto-invertido);
-    width: 100vw;
+    
 }
 
 section#colecao img{
@@ -164,8 +162,9 @@ section#colecao > div.colecao-container{
     text-align: center;
 }
 
-section#colecao > img{
-    min-width: 600px;
+section#colecao > div.colecao-container > img{
+    width: 200px;
+    height: 200px;
 }
 
 section#colecao > div.colecao-container{
@@ -176,7 +175,71 @@ section#colecao > div.colecao-container{
 }
 
 section#colecao > div.image-container{
-    display: block;
-    margin: 0 auto;
+    
+}
+
+section#colecao > div.image-container > img{
+    width: 200px;
+    height: 200px;
+}
+
+section#manifesto{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 50px;
+    background-image: url(../imagens/manifesto-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(---texto-invertido);
     width: 100%;
+    
+}
+
+section#manifesto > img{
+    margin-top: 30px;
+}
+
+section#manifesto > p{
+    margin: 30px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+section#shop{
+    padding: 30px;
+}
+
+section#shop > div#produtos{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 10px;
+}
+
+section#shop > div#produtos > div.itens{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: 90%;
+}
+
+section#shop > div#produtos > div.itens > img{
+    height: 300px;
+    width: 70%;
+}
+
+section#shop > div#produtos > div.itens > p{
+    font-weight: bold;
+}
+
+
+footer{
+    height: 150px;
+    width: 100%;
+    background-color: var(---fundo);
+    color: var(---texto-invertido);
 }
