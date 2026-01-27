@@ -202,13 +202,14 @@ section#manifesto{
 }
 
 section#manifesto > img{
-    max-width: 80%;
+    max-width: 90%;
     margin-top: 30px;
 }
 
 section#manifesto > p{
-    margin: 30px;
-    font-size: 1.2em;
+    margin: 10px;
+    font-size: 1.1em;
+    text-indent: 1em;
     text-align: center;
 }
 
