@@ -172,8 +172,9 @@ section#colecao > div.colecao-container > p{
 
 section#colecao > div.image-container{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
     gap: 5px;
 }
 
@@ -201,6 +202,7 @@ section#manifesto{
 }
 
 section#manifesto > img{
+    width: 97%;
     margin-top: 30px;
 }
 
