@@ -55,6 +55,7 @@ header > nav > div#menu > span.icon{
 
 header > nav > div#menu > span.icon-op{
     background-color: var(---fundo);
+    box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.300);
     transition: background-color .3s;
 }
 
@@ -138,9 +139,11 @@ section#principal > div.itens > h1{
     margin-top: 90px;
 }
 
-section#principal > div.itens > input{
-    width: 100px;
-    height: 50px;
+section#principal > div.itens > a{
+    text-align: center;
+    text-decoration: none;
+    font-size: .8em;
+    padding: 15px;
     border: 1px solid var(---borda-invertida);
     background-color: rgba(0, 0, 0, 0);
     color: var(---texto-invertido);
@@ -148,7 +151,7 @@ section#principal > div.itens > input{
     cursor: pointer;
 }
 
-section#principal > div.itens > input:hover{
+section#principal > div.itens > a:hover{
     background-color: var(---fundo-invertido);
     color: var(---text);
 }
@@ -215,12 +218,11 @@ section#manifesto{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-around;
-    gap: 50px;
+    justify-content: space-evenly;
     background-image: url(../imagens/manifesto-bg.png);
-    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;
+    background-position: top;
     color: var(---texto-invertido);
     height: 100vh;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.300);
@@ -229,6 +231,8 @@ section#manifesto{
 
 section#manifesto > img{
     max-width: 100%;
+    background-size: contain;
+    background-position: top;
     height: auto;
 }
 
