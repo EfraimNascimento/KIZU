@@ -84,6 +84,7 @@ header > nav > div#menu > ul > li{
 
 header > nav > div#menu > ul > li > a{
     text-decoration: none;
+    text-transform: uppercase;
     padding: 5px;
     font-size: 1.2em;
     color: var(---texto-invertido);

@@ -19,7 +19,17 @@ const navLinks = document.querySelectorAll('#menu ul a.link');
 navLinks.forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
+//Adiciona a indicação visual de qual seção está ativa
+    navLinks.forEach(link =>{
+    link.classList.remove('pagina-ativa')
+    })
+    if(this.classList[1] != 'pagina-ativa'){
+        link.classList.add('pagina-ativa');
+        console.log('ok')
+    }
+
     const target = document.querySelector(this.getAttribute('href'));
+
     if(target.offsetTop != 0){
         document.getElementById('menu-span').classList.add('icon-op');
     }else{
@@ -40,6 +50,11 @@ navLinks.forEach(link => {
 let btnColection = document.getElementById('btnCol');   
 btnColection.addEventListener('click', function(e){
     e.preventDefault();
+    navLinks.forEach(link =>{
+    link.classList.remove('pagina-ativa')
+    })
+    navLinks[1].classList.add('pagina-ativa')
+
     const target = document.querySelector(this.getAttribute('href'));
     if(target.offsetTop != 0){
         document.getElementById('menu-span').classList.add('icon-op');
@@ -56,32 +71,32 @@ btnColection.addEventListener('click', function(e){
     }
 });
 
-// 1. Seleciona todas as seções que você quer monitorar
+//Seleciona todas as seções que você quer monitorar
 const sections = document.querySelectorAll('.monitorada');
 
-// 2. Cria o observador
+//Cria o observador
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    // 3. Verifica se a seção está visível (isIntersecting)
-
+//Verifica se a seção está visível (isIntersecting)
     if (entry.isIntersecting) {      
       if(entry.target.id == 'principal'){
         document.getElementById('menu-span').classList.remove('icon-op');
-      }else{
+      }
+      else{
          document.getElementById('menu-span').classList.add('icon-op');
         }
 
-      // Opcional: Adicionar/remover classes ativas
-      sections.forEach(s => s.classList.remove('active'));
-      entry.target.classList.add('active');
+//Adicionar/remover classes ativas
+    //   sections.forEach(s => s.classList.remove('ativo'));
+    //   entry.target.classList.add('ativo');
     }
   });
 }, {
-  // Opções: 0.35 significa que 35% da seção precisa estar visível
-   threshold: .35
+  // Opções: 0.44 significa que 44% da seção precisa estar visível
+    threshold: .44
 });
 
-// 4. Aplica o observador a cada seção
+//Aplica o observador a cada seção
 sections.forEach((section) => {
   observer.observe(section);
 });
