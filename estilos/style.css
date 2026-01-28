@@ -40,20 +40,26 @@ header > nav{
     position: absolute;
 }
 
-header > nav > div#menu-icons{
+header > nav > div#menu{
     display: flex;
     flex-flow: column nowrap;
     background-color: rgba(0, 0, 0, 0.300);
     width: 100%;
 }
 
-header > nav > div#menu-icons > span.icon{
+header > nav > div#menu > span.icon{
     display: flex;
     align-items: center;
     height: 80px;
 }
 
-header > nav > div#menu-icons > span.icon > i{
+header > nav > div#menu > span.icon-op{
+    background-color: var(---fundo);
+    transition: background-color .3s;
+}
+
+
+header > nav > div#menu > span.icon > i{
     margin-left: 30px;
     cursor: pointer;
 }
@@ -63,18 +69,19 @@ header > nav{
     background-color: rgba(0, 0, 0, 0.300);
 }
 
-header > nav > div#menu-icons > ul{
+header > nav > div#menu > ul{
     list-style: none;
     margin-left: 10px;
     padding: 20px;
+    display: none;
 }
 
-header > nav > div#menu-icons > ul > li{
+header > nav > div#menu > ul > li{
     margin-bottom: 20px;
     width: 100%;
 }
 
-header > nav > div#menu-icons > ul > li > a{
+header > nav > div#menu > ul > li > a{
     text-decoration: none;
     padding: 5px;
     font-size: 1.2em;
@@ -83,11 +90,11 @@ header > nav > div#menu-icons > ul > li > a{
     transition: background-color .5s, color .5s;
 }
 
-header > nav > div#menu-icons > ul > li > a.pagina-ativa{
+header > nav > div#menu > ul > li > a.pagina-ativa{
     border-bottom: 2px solid var(---borda-invertida);
 }
 
-header > nav > div#menu-icons > ul > li > a:hover{
+header > nav > div#menu > ul > li > a:hover{
     color: black;
     background-color: var(---texto-invertido);
 }
@@ -101,7 +108,7 @@ section#principal{
     align-items: center;
     color: var(---texto-invertido);
     font-weight: 400;
-    background-image: url(../imagens/image-home-centralized.png);
+    background-image: url(../imagens/home-image.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -113,19 +120,22 @@ section#principal > div.itens{
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    gap: 100px;
-    height: 100vh;
+    gap: 10px;
+    
 }
 
 section#principal > div.itens > img{
-    margin-top: 50%;
+    margin-top: 20%;
     max-width: 100%;
     height: auto;
 }
 
 section#principal > div.itens > h1{
     font-family: "Cormorant Upright", serif;
+    font-weight: lighter;
+    text-align: center;
     font-size: 1.8em;
+    margin-top: 90px;
 }
 
 section#principal > div.itens > input{
@@ -134,7 +144,7 @@ section#principal > div.itens > input{
     border: 1px solid var(---borda-invertida);
     background-color: rgba(0, 0, 0, 0);
     color: var(---texto-invertido);
-    margin-top: 5px;
+    margin-top: 50px;
     cursor: pointer;
 }
 
@@ -164,17 +174,18 @@ section#colecao > h2{
 section#colecao > div.colecao-container{
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
     text-align: center;
 }
 
 section#colecao > div.colecao-container > img{
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
-    background-size: cover;
+    background-position: top;
 }
 
 section#colecao > div.colecao-container > p{
-    margin: 10px;
+    margin: 50px 10px;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     color: #FFFFFF;
@@ -242,16 +253,14 @@ section#shop > div#produtos{
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
 }
 
 section#shop > div#produtos > div.itens{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
-    width: 90%;
+    width: 250px;
 }
 
 section#shop > div#produtos > div.itens > img{
@@ -261,7 +270,12 @@ section#shop > div#produtos > div.itens > img{
 }
 
 section#shop > div#produtos > div.itens > p{
+    margin-top: 10px;
     font-weight: bold;
+}
+
+section#shop > div#produtos > div.itens > span{
+    margin-top: 5px;
 }
 
 /*Fim da seção shop*/
