@@ -50,8 +50,8 @@ navLinks.forEach(link => {
 let btnColection = document.getElementById('btnCol');   
 btnColection.addEventListener('click', function(e){
     e.preventDefault();
-    navLinks.forEach(link =>{
-    link.classList.remove('pagina-ativa')
+    navLinks.forEach(x =>{
+    x.classList.remove('pagina-ativa')
     })
     navLinks[1].classList.add('pagina-ativa')
 
@@ -86,9 +86,15 @@ const observer = new IntersectionObserver((entries) => {
          document.getElementById('menu-span').classList.add('icon-op');
         }
 
-//Adicionar/remover classes ativas
-    //   sections.forEach(s => s.classList.remove('ativo'));
-    //   entry.target.classList.add('ativo');
+//Adiciona e remove classes ativas das seções
+    sections.forEach(s => s.classList.remove('ativo'));
+    entry.target.classList.add('ativo');
+
+    
+        if(entry.target.id){
+            console.log()
+        }
+
     }
   });
 }, {
@@ -101,6 +107,7 @@ sections.forEach((section) => {
   observer.observe(section);
 });
 
+//Carrossel de imagens
 const elemSlides = document.querySelector('.slides');
 const elemImages = document.querySelectorAll('.slides img.foto');
 const elemBotaoEsquerdo = document.querySelector('.esquerda');
