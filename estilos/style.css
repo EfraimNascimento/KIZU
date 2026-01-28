@@ -37,7 +37,7 @@ header{
 }
 
 header > nav{
-    position: sticky;
+    position: absolute;
 }
 
 header > nav > div#menu-icons{
@@ -101,7 +101,7 @@ section#principal{
     align-items: center;
     color: var(---texto-invertido);
     font-weight: 400;
-    background-image: url(../imagens/home-image.png);
+    background-image: url(../imagens/image-home-centralized.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,7 +118,7 @@ section#principal > div.itens{
 }
 
 section#principal > div.itens > img{
-    margin-top: 40px;
+    margin-top: 50%;
     max-width: 100%;
     height: auto;
 }
