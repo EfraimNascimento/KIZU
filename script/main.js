@@ -100,3 +100,40 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach((section) => {
   observer.observe(section);
 });
+
+const elemSlides = document.querySelector('.slides');
+const elemImages = document.querySelectorAll('.slides img.foto');
+const elemBotaoEsquerdo = document.querySelector('.esquerda');
+const elemBotaoDireito = document.querySelector('.direita');
+const tamanhoLista = elemImages.length -1;
+
+let index = 0;
+
+elemBotaoEsquerdo.addEventListener('click', () =>{
+    index--;
+    if(index < 0){
+        index = tamanhoLista
+    }
+    atualizarCarrossel();
+});
+
+elemBotaoDireito.addEventListener('click', () =>{
+    incrementarIndex();
+    atualizarCarrossel();
+});
+
+const incrementarIndex = () =>{
+    index++;
+    if(index > tamanhoLista){
+        index = 0
+    }
+}
+
+const atualizarCarrossel = () =>{
+    elemSlides.style.transform = `translateX(-${index * 100}%)`
+}
+
+setInterval(() =>{
+    incrementarIndex()
+    atualizarCarrossel()
+}, 5000)

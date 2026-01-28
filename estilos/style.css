@@ -56,7 +56,7 @@ header > nav > div#menu > span.icon{
 header > nav > div#menu > span.icon-op{
     background-color: var(---fundo);
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.300);
-    transition: background-color .3s;
+    transition: background-color .5s;
 }
 
 
@@ -164,6 +164,9 @@ section#colecao{
     background-color: var(---fundo);
     color: var(---texto-invertido);
     height: fit-content;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 section#colecao > h2{
@@ -198,19 +201,50 @@ section#colecao > div.colecao-container > p{
     line-height: 1.8em;
 }
 
-section#colecao > div.image-container{
+section#colecao > div.carrossel{
+    max-width: 450px;
+    overflow: hidden;
+    position: relative;
+}
+
+section#colecao > div.carrossel > div.slides{
     display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    width: 100%;
-    gap: 5px;
+    transition: transform .5s ease-in-out;
 }
 
-section#colecao > div.image-container > img{
-    width: 200px;
-    height: 200px;
+section#colecao > div.carrossel > div.slides > img{
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
 }
 
+section#colecao > div.carrossel > button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.400);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2em;
+    transition: background-color .5s, color .5s;
+}
+
+section#colecao > div.carrossel > button:hover{
+    background-color: rgba(255, 255, 255, 0.400);
+    color: black;
+}
+
+section#colecao > div.carrossel > button.esquerda{
+    left: 10px;
+}
+
+section#colecao > div.carrossel > button.direita{
+    right: 10px;
+}
 
 /*Fim da seção coleção*/
 /*Inicio da seção manifesto*/
