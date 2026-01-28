@@ -63,19 +63,22 @@ const sections = document.querySelectorAll('.monitorada');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     // 3. Verifica se a seção está visível (isIntersecting)
-    
-    if (entry.isIntersecting) {
-      console.log('Seção visível:', entry.target.id);
-      
-      
+
+    if (entry.isIntersecting) {      
+      if(entry.target.id == 'principal'){
+        document.getElementById('menu-span').classList.remove('icon-op');
+      }else{
+         document.getElementById('menu-span').classList.add('icon-op');
+        }
+
       // Opcional: Adicionar/remover classes ativas
       sections.forEach(s => s.classList.remove('active'));
       entry.target.classList.add('active');
     }
   });
 }, {
-  // Opções: 0.5 significa que 50% da seção precisa estar visível
-   threshold: .24
+  // Opções: 0.35 significa que 35% da seção precisa estar visível
+   threshold: .35
 });
 
 // 4. Aplica o observador a cada seção
