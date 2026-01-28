@@ -10,20 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/727c0a0107.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
-        <div class="menu-icons">
-            <span class="icon"><i class="fa-solid fa-bars" style="color: #ffffff; font-size: 1.4em;"></i></span>
-            <span class="icon"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 1.4em;"></i></span>
-        </div>
         <nav>
-            <ul>
-                <li><a href="#principal" class="pagina-ativa">HOME</a></li>
-                <li><a href="#colecao">COLEÇÃO</a></li>
-                <li><a href="#manifesto">MANIFESTO</a></li>
-                <li><a href="#">SOBRE</a></li>
-                <li><a href="#carrinho">CARRINHO</a></li>
-            </ul>
+            <div id="menu-icons">
+                <span class="icon"><i class="fa-solid fa-bars" style="color: #ffffff; font-size: 1.4em;" onclick="clickMenu()"></i></span>
+                <!-- <span class="icon"><i class="fa-solid fa-cart-shopping" style="color: #ffffff; font-size: 1.4em;"></i></span> -->
+                <ul id="itens">
+                    <li><a href="#principal" class="pagina-ativa">HOME</a></li>
+                    <li><a href="#colecao">COLEÇÃO</a></li>
+                    <li><a href="#manifesto">MANIFESTO</a></li>
+                    <li><a href="#">SOBRE</a></li>
+                    <li><a href="#carrinho">CARRINHO</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -147,6 +147,25 @@
             </ul>
         </div>
     </footer>
-    
+
+    <script>
+        function mudouTamanho(){
+            if(window.innerWidth >= 768){
+                itens.style.display = 'block'
+            }else{
+                itens.style.display = 'none'
+            }
+
+        }
+
+        function clickMenu(){
+
+            if(itens.style.display == 'block'){
+                itens.style.display = 'none'
+            } else{
+                itens.style.display = 'block'
+            }
+        }
+    </script>
 </body>
 </html>
