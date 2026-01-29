@@ -146,7 +146,7 @@
     }
 }
 
-@media screen and (max-width: 1450px){
+@media screen and (min-width: 1450px){
 
     section#colecao{
         grid-template-columns: auto 35% 35% auto;
@@ -156,12 +156,11 @@
         display: flex;
         flex-flow: row wrap;
         width: 100%;
-        margin-bottom: 100px;
+        height: fit-content;
     }
 
     section#shop > div#produtos{
         width: 80%;
-        height: 100vh;
-        margin: 0;
+        margin: 100px;
     }    
 }
