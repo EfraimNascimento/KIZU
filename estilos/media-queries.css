@@ -23,3 +23,145 @@
         width: 100%;
     }
 }
+
+@media screen and (min-width: 800px){
+
+    section#manifesto > p{
+        width: 85%;
+    }
+
+    section#shop{
+        width: 100%;
+    }
+
+    section#shop > div#produtos{
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    section#shop > div#produtos > div.itens:nth-child(5){
+        
+    }
+}
+
+@media screen and (min-width: 990px){
+
+    section#colecao{
+        display: grid;
+        grid-template-columns: 1fr 40% 40% 1fr;
+        grid-template-rows: 120px 1fr;
+        height: 100vh;
+        gap: 10px;
+        
+    }
+
+    section#colecao > h2{
+        margin: 0;
+        grid-row-start: 1;
+        grid-column: 2/-2;
+    }
+
+    section#colecao > div.colecao-container{
+        grid-column-start: 2;
+        grid-row-start: 2;
+        align-self: flex-start;
+    }
+
+    section#colecao > div.colecao-container > img{
+        max-width: 100%;
+    }
+
+    section#colecao > div.colecao-container > p{
+        margin: 0;
+        line-height: 1.5em;
+        text-indent: 1.5em;
+        text-align: justify;
+        padding: 10px;
+        width: 100%;
+    }
+
+    section#colecao > div.carrossel{
+        grid-column: 3/4;
+        grid-row-start: 2;
+        margin: 0;
+        align-self: flex-start;
+        max-width: 100%;
+    }
+
+    section#colecao > div.carrossel > div.slides > img.foto{
+        height: 100%;
+    }
+
+    section#shop > div#produtos{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    section#manifesto{
+        display: grid;
+        grid-template-columns: 1fr 40% 40% 1fr;
+        grid-template-rows: 250px 1fr;
+        justify-items: center;
+    }
+
+    section#manifesto > img{
+        grid-column: 2/-2;
+        grid-row: 1;
+    }
+
+    section#manifesto > p{
+        font-size: 1.4em;
+        grid-column: 2/-2;
+        grid-row: 2;
+    }
+}
+
+@media screen and (min-width: 1380px){
+
+    section#colecao{
+        grid-template-columns: 1fr 35% 35% 1fr;
+        grid-template-rows: 100px 80% 1fr;
+
+    }
+
+    section#colecao > div.colecao-container{
+        grid-row: 2/-2;
+    }
+
+    section#colecao > div.carrossel{
+        grid-row: 2/-2;
+        max-height: 100%;
+    }
+
+    section#shop{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    section#shop > div#produtos{
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1450px){
+
+    section#colecao{
+        grid-template-columns: auto 35% 35% auto;
+    }
+
+    section#shop{
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    section#shop > div#produtos{
+        width: 80%;
+        height: 100vh;
+        margin: 0;
+    }    
+}

@@ -43,7 +43,7 @@ header > nav > div#menu > span.icon{
     height: 80px;
 }
 
-header > nav > div#menu > span.icon-op{
+header > nav > div#menu .icon-op{
     background-color: var(---fundo);
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.300);
     transition: background-color .5s;
@@ -61,6 +61,7 @@ header > nav{
 }
 
 header > nav > div#menu > ul{
+    display: none;
     list-style: none;
     margin-left: 10px;
     padding: 20px;
@@ -135,6 +136,7 @@ section#principal > div.itens > a{
     font-size: .8em;
     padding: 15px;
     border: 1px solid var(---borda-invertida);
+    border-radius: 2px;
     background-color: rgba(0, 0, 0, 0);
     color: var(---texto-invertido);
     margin-top: 50px;
@@ -178,6 +180,8 @@ section#colecao > div.colecao-container > img{
     max-width: 90%;
     height: auto;
     background-position: top;
+    border-radius: 2px;
+
 }
 
 section#colecao > div.colecao-container > p{
@@ -187,13 +191,17 @@ section#colecao > div.colecao-container > p{
     color: #FFFFFF;
     opacity: 0.85;
     text-indent: 1em;
+    text-align: justify;
     line-height: 1.8em;
+    width: 90%;
 }
 
 section#colecao > div.carrossel{
     max-width: 450px;
     overflow: hidden;
     position: relative;
+    margin-bottom: 50px;
+    border-radius: 2px;
 }
 
 section#colecao > div.carrossel > div.slides{
@@ -239,10 +247,11 @@ section#colecao > div.carrossel > button.direita{
 /*Inicio da seção manifesto*/
 
 section#manifesto{
-    display: flex;
-    flex-flow: column nowrap;
+    display: grid;
+    grid-template-columns: 1fr 40% 40% 1fr;
+    grid-template-rows: 250px 1fr;
+    justify-items: center;
     align-items: center;
-    justify-content: space-evenly;
     background-image: url(../imagens/manifesto-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -254,13 +263,17 @@ section#manifesto{
 }
 
 section#manifesto > img{
+    grid-column: 2/-2;
+    grid-row: 1;
     max-width: 100%;
+    height: auto;
     background-size: contain;
     background-position: top;
-    height: auto;
 }
 
 section#manifesto > p{
+    grid-column: 2/-2;
+    grid-row: 2;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     color: #FFFFFF;
@@ -275,6 +288,8 @@ section#manifesto > p{
 section#shop{
     padding: 10px;
     height: fit-content;
+    background-color: var(---fundo);
+    color: var(---texto-invertido);
 }
 
 section#shop > div#produtos{
@@ -282,6 +297,7 @@ section#shop > div#produtos{
     flex-flow: column;
     align-items: center;
     gap: 30px;
+    margin: 50px 0px;
 }
 
 section#shop > div#produtos > div.itens{
@@ -292,9 +308,15 @@ section#shop > div#produtos > div.itens{
 }
 
 section#shop > div#produtos > div.itens > img{
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.300);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.300);
     height: 300px;
     width: 100%;
+    border-radius: 2px;
+    transition: transform .5s;
+}
+
+section#shop > div#produtos > div.itens:hover {
+    transform: translateY(-03%); 
 }
 
 section#shop > div#produtos > div.itens > p{
@@ -316,7 +338,6 @@ footer{
     background-color: var(---fundo);
     color: var(---texto-invertido);
     box-shadow: 0px -3px 8px rgba(0, 0, 0, 0.300);
-    margin-top: 50px;
 }
 
 footer > img{
@@ -344,4 +365,12 @@ footer > div#itens-contato > ul > li > a{
     color: var(---texto-invertido);
     margin: 5px;
     line-height: 2.2em;
+    padding: 5px;
+    border-radius: 2px;
+    transition: background-color .5s, color .5s;
+}
+
+footer > div#itens-contato > ul > li > a:hover{
+    background-color: var(---fundo-invertido);
+    color: var(---text);
 }

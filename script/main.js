@@ -11,7 +11,6 @@ function mudouTamanho(){
     }
 }
 
-
 function clickMenu(){
     if(itens.style.display == 'block'){
         itens.style.display = 'none'
@@ -20,31 +19,46 @@ function clickMenu(){
     }
 }
 
+function verificarTamanho(){
+    let hamburgerMenu = document.querySelector('span.icon')
+    if(innerWidth >= 700){
+        itens.style.display = 'flex'
+        hamburgerMenu.style.display = 'none'
+    }
+}
+
 // Scroll suave para links de navegação + opacidade de navbar
 const navLinks = document.querySelectorAll('#menu ul a.link');
+
 navLinks.forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
+
 //Adiciona a indicação visual de qual seção está ativa
     navLinks.forEach(link =>{
     link.classList.remove('pagina-ativa')
     })
+
     if(this.classList[1] != 'pagina-ativa'){
         link.classList.add('pagina-ativa');
-        console.log('ok')
     }
 
     const target = document.querySelector(this.getAttribute('href'));
 
     if(target.offsetTop != 0){
         document.getElementById('menu-span').classList.add('icon-op');
+        document.getElementById('itens').classList.add('icon-op');
     }else{
         document.getElementById('menu-span').classList.remove('icon-op');
+        document.getElementById('itens').classList.remove('icon-op');
     }
+
     if (target) {
-        itens.style.display = 'none'
+        if(window.innerWidth < 700){
+            itens.style.display = 'none'
+        }
         const headerHeight = document.querySelector('header').offsetHeight;
-        const targetPosition = target.offsetTop - headerHeight - 15;
+        const targetPosition = target.offsetTop - headerHeight - 30;
         window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
@@ -53,7 +67,8 @@ navLinks.forEach(link => {
   });
 });
 
-let btnColection = document.getElementById('btnCol');   
+let btnColection = document.getElementById('btnCol'); 
+
 btnColection.addEventListener('click', function(e){
     e.preventDefault();
     navLinks.forEach(x =>{
@@ -62,6 +77,7 @@ btnColection.addEventListener('click', function(e){
     navLinks[1].classList.add('pagina-ativa')
 
     const target = document.querySelector(this.getAttribute('href'));
+
     if(target.offsetTop != 0){
         document.getElementById('menu-span').classList.add('icon-op');
     }else{
@@ -69,7 +85,7 @@ btnColection.addEventListener('click', function(e){
     }
     if(target){
         const headerHeight = document.querySelector('header').offsetHeight;
-        const targetPosition = target.offsetTop - headerHeight - 15;
+        const targetPosition = target.offsetTop - headerHeight - 30;
         window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
@@ -94,13 +110,17 @@ const observer = new IntersectionObserver((entries) => {
 
 //Adiciona e remove classes ativas das seções
     sections.forEach(s => s.classList.remove('ativo'));
+    
     entry.target.classList.add('ativo');
 
-    
-        if(entry.target.id){
-            console.log()
+//Utilizando o observador aplica a opacidade na nav bar quando ela está fota da seção do topo
+        if(entry.target.offsetTop != 0){
+             document.getElementById('menu-span').classList.add('icon-op');
+            document.getElementById('itens').classList.add('icon-op');
+        }else{
+            document.getElementById('menu-span').classList.remove('icon-op');
+            document.getElementById('itens').classList.remove('icon-op');
         }
-
     }
   });
 }, {
