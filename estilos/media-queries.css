@@ -40,9 +40,6 @@
         width: 100%;
     }
 
-    section#shop > div#produtos > div.itens:nth-child(5){
-        
-    }
 }
 
 @media screen and (min-width: 990px){

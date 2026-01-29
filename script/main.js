@@ -110,7 +110,6 @@ const observer = new IntersectionObserver((entries) => {
 
 //Adiciona e remove classes ativas das seções
     sections.forEach(s => s.classList.remove('ativo'));
-    
     entry.target.classList.add('ativo');
 
 //Utilizando o observador aplica a opacidade na nav bar quando ela está fota da seção do topo
@@ -121,6 +120,48 @@ const observer = new IntersectionObserver((entries) => {
             document.getElementById('menu-span').classList.remove('icon-op');
             document.getElementById('itens').classList.remove('icon-op');
         }
+
+//Idêntifica a seção sendo observada e adiciona a classe de pagina ativa ao link correspondente a seção        
+        const links = document.querySelectorAll('#menu ul a')
+        switch (sections != null){
+            case sections[0].classList[1] == 'ativo':
+                links[2].classList.remove('pagina-ativa');
+                links[3].classList.remove('pagina-ativa');
+                links[4].classList.remove('pagina-ativa');
+                links[1].classList.remove('pagina-ativa');
+                links[0].classList.add('pagina-ativa');
+                break;
+            case sections[1].classList[1] == 'ativo':
+                links[2].classList.remove('pagina-ativa');
+                links[3].classList.remove('pagina-ativa');
+                links[4].classList.remove('pagina-ativa');
+                links[0].classList.remove('pagina-ativa');
+                links[1].classList.add('pagina-ativa');
+                break;
+            case sections[2].classList[1] == 'ativo':
+                links[1].classList.remove('pagina-ativa');
+                links[3].classList.remove('pagina-ativa');
+                links[4].classList.remove('pagina-ativa');
+                links[0].classList.remove('pagina-ativa');
+                links[2].classList.add('pagina-ativa');
+                break;
+            case sections[3].classList[1] == 'ativo':
+                links[2].classList.remove('pagina-ativa');
+                links[1].classList.remove('pagina-ativa');
+                links[4].classList.remove('pagina-ativa');
+                links[0].classList.remove('pagina-ativa');
+                links[3].classList.add('pagina-ativa');
+                break;
+            case sections[4].classList[1] == 'ativo':
+                links[2].classList.remove('pagina-ativa');
+                links[3].classList.remove('pagina-ativa');
+                links[1].classList.remove('pagina-ativa');
+                links[0].classList.remove('pagina-ativa');
+                links[4].classList.add('pagina-ativa');
+            default:
+                sections = null;
+        }
+
     }
   });
 }, {
