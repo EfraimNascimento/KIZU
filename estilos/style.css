@@ -20,16 +20,6 @@ body{
     font-family: 'Syne', sans-serif;
 }
 
-section{
-    height: 100vh;
-    padding: 10px;
-}
-
-img{
-    max-width: 100%;
-    height: auto;
-}
-
 header{
     position: sticky;
     top: 0;
@@ -74,7 +64,6 @@ header > nav > div#menu > ul{
     list-style: none;
     margin-left: 10px;
     padding: 20px;
-    display: none;
 }
 
 header > nav > div#menu > ul > li{
@@ -127,8 +116,8 @@ section#principal > div.itens{
 }
 
 section#principal > div.itens > img{
-    margin-top: 20%;
-    max-width: 100%;
+    margin-top: 25%;
+    max-width: 70%;
     height: auto;
 }
 

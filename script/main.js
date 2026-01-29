@@ -1,10 +1,16 @@
 function mudouTamanho(){
-    if(window.innerWidth >= 768){
-        itens.style.display = 'block'
+    let hamburgerMenu = document.querySelector('span.icon')
+    if(window.innerWidth >= 700){
+        itens.style.display = 'flex'
+        hamburgerMenu.style.display = 'none'
+    
     }else{
         itens.style.display = 'none'
+        hamburgerMenu.style.display = 'flex'
+
     }
 }
+
 
 function clickMenu(){
     if(itens.style.display == 'block'){
