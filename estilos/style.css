@@ -1,10 +1,17 @@
 @charset "UTF-8";
+@font-face {
+    font-family: 'FogtwoNo5';
+    src: url(../fonts/fogtwono5/FogtwoNo5.otf) format('otf'),
+        url(../fonts/fogtwono5/FogtwoNo5.ttf) format('ttf');
+}
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 :root{
@@ -21,6 +28,8 @@ body{
 }
 
 header{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -117,29 +126,35 @@ section#principal > div.itens{
 }
 
 section#principal > div.itens > img{
+    opacity: 65%;
+    filter: brightness(150%);
     margin-top: 25%;
     max-width: 70%;
     height: auto;
 }
 
 section#principal > div.itens > h1{
-    font-family: "Cormorant Upright", serif;
+    font-family: 'FogtwoNo5', serif;
     font-weight: lighter;
     text-align: center;
-    font-size: 1.8em;
-    margin-top: 90px;
+    font-size: 2em;
 }
 
 section#principal > div.itens > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     font-size: .8em;
-    padding: 15px;
+    width: 150px;
+    height: 40px;
     border: 1px solid var(---borda-invertida);
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0);
     color: var(---texto-invertido);
-    margin-top: 50px;
+    margin-top: 30px;
     cursor: pointer;
 }
 
@@ -162,8 +177,7 @@ section#colecao{
 
 section#colecao > h2{
     font-family: "Cormorant Upright", serif;
-    font-weight: 700;
-    font-style: normal;
+    font-weight: 800;
     font-size: 1.6em;
     text-align: center;
     margin: 50px;
@@ -274,11 +288,13 @@ section#manifesto > img{
 section#manifesto > p{
     grid-column: 2/-2;
     grid-row: 2;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 1.5;
     color: #FFFFFF;
     opacity: 0.85;
-    text-indent: 1em;
+    text-indent: 1.2em;
     text-align: center;
 }
 
@@ -305,6 +321,7 @@ section#shop > div#produtos > div.itens{
     flex-flow: column nowrap;
     align-items: center;
     width: 250px;
+    transition: transform .5s;
 }
 
 section#shop > div#produtos > div.itens > img{
@@ -312,11 +329,10 @@ section#shop > div#produtos > div.itens > img{
     height: 300px;
     width: 100%;
     border-radius: 2px;
-    transition: transform .5s;
 }
 
 section#shop > div#produtos > div.itens:hover {
-    transform: translateY(-03%); 
+    transform: scale(1.05); 
 }
 
 section#shop > div#produtos > div.itens > p{
@@ -341,6 +357,7 @@ footer{
 }
 
 footer > img{
+    filter: brightness(200%);
     grid-column: 1;
     width:100px;
 }

@@ -2,7 +2,7 @@
 
 @media screen and (min-width: 700px){
     section#principal > div.itens > img{
-        margin-top: 25%;
+        margin-top: 15%;
         max-width: 50%;
         height: auto;
     }
@@ -26,6 +26,12 @@
 
 @media screen and (min-width: 800px){
 
+    section#principal > div.itens > img{
+        margin-top: 12%;
+        max-width: 50%;
+        height: auto;
+    }
+
     section#manifesto > p{
         width: 85%;
     }
@@ -43,6 +49,12 @@
 }
 
 @media screen and (min-width: 990px){
+
+    section#principal > div.itens > img{
+        margin-top: 10%;
+        max-width: 50%;
+        height: auto;
+    }
 
     section#colecao{
         display: grid;
@@ -115,6 +127,13 @@
 }
 
 @media screen and (min-width: 1380px){
+
+    section#principal > div.itens > img{
+        
+        margin-top: 10%;
+        max-width: 50%;
+        height: auto;
+    }
 
     section#colecao{
         grid-template-columns: 1fr 35% 35% 1fr;

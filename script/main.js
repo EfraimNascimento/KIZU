@@ -7,15 +7,18 @@ function mudouTamanho(){
     }else{
         itens.style.display = 'none'
         hamburgerMenu.style.display = 'flex'
-
     }
 }
 
 function clickMenu(){
+    let hamburgerMenu = document.querySelector('span.icon')
     if(itens.style.display == 'block'){
         itens.style.display = 'none'
+        
+
     } else{
         itens.style.display = 'block'
+        console.log(hamburgerMenu)
     }
 }
 
@@ -125,38 +128,33 @@ const observer = new IntersectionObserver((entries) => {
         const links = document.querySelectorAll('#menu ul a')
         switch (sections != null){
             case sections[0].classList[1] == 'ativo':
-                links[2].classList.remove('pagina-ativa');
-                links[3].classList.remove('pagina-ativa');
-                links[4].classList.remove('pagina-ativa');
-                links[1].classList.remove('pagina-ativa');
+                links.forEach(e =>{
+                    e.classList.remove('pagina-ativa')
+                });
                 links[0].classList.add('pagina-ativa');
                 break;
             case sections[1].classList[1] == 'ativo':
-                links[2].classList.remove('pagina-ativa');
-                links[3].classList.remove('pagina-ativa');
-                links[4].classList.remove('pagina-ativa');
-                links[0].classList.remove('pagina-ativa');
+                links.forEach(e =>{
+                    e.classList.remove('pagina-ativa')
+                });
                 links[1].classList.add('pagina-ativa');
                 break;
             case sections[2].classList[1] == 'ativo':
-                links[1].classList.remove('pagina-ativa');
-                links[3].classList.remove('pagina-ativa');
-                links[4].classList.remove('pagina-ativa');
-                links[0].classList.remove('pagina-ativa');
+                links.forEach(e =>{
+                    e.classList.remove('pagina-ativa')
+                });
                 links[2].classList.add('pagina-ativa');
                 break;
             case sections[3].classList[1] == 'ativo':
-                links[2].classList.remove('pagina-ativa');
-                links[1].classList.remove('pagina-ativa');
-                links[4].classList.remove('pagina-ativa');
-                links[0].classList.remove('pagina-ativa');
+                links.forEach(e =>{
+                    e.classList.remove('pagina-ativa')
+                });
                 links[3].classList.add('pagina-ativa');
                 break;
             case sections[4].classList[1] == 'ativo':
-                links[2].classList.remove('pagina-ativa');
-                links[3].classList.remove('pagina-ativa');
-                links[1].classList.remove('pagina-ativa');
-                links[0].classList.remove('pagina-ativa');
+                links.forEach(e =>{
+                    e.classList.remove('pagina-ativa')
+                });
                 links[4].classList.add('pagina-ativa');
             default:
                 sections = null;
