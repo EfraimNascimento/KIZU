@@ -112,7 +112,7 @@ const observer = new IntersectionObserver((entries) => {
     sections.forEach(s => s.classList.remove('ativo'));
     entry.target.classList.add('ativo');
 
-//Utilizando o observador aplica a opacidade na nav bar quando ela está fota da seção do topo
+//Utilizando o observador, aplica a opacidade na nav bar quando ela está fora da seção do topo
         if(entry.target.offsetTop != 0){
              document.getElementById('menu-span').classList.add('icon-op');
             document.getElementById('itens').classList.add('icon-op');
