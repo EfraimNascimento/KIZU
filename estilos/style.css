@@ -105,7 +105,7 @@ header > nav > div#menu > ul > li > a:hover{
 section#principal{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: fit-content;
     align-items: center;
     color: var(---texto-invertido);
     font-weight: 400;
@@ -122,7 +122,7 @@ section#principal > div.itens{
     align-items: center;
     justify-content: center;
     gap: 10px;
-    
+    margin-bottom: 60px;
 }
 
 section#principal > div.itens > img{
@@ -271,7 +271,7 @@ section#manifesto{
     background-size: cover;
     background-position: top;
     color: var(---texto-invertido);
-    height: 100vh;
+    height: fit-content;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.300);
 
 }
@@ -296,6 +296,7 @@ section#manifesto > p{
     opacity: 0.85;
     text-indent: 1.2em;
     text-align: center;
+    margin-bottom: 250px;
 }
 
 /*Fim da seção manifesto*/
